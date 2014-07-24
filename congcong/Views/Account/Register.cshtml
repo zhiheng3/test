@@ -1,0 +1,72 @@
+﻿@model congcong.Models.RegisterModel
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <link rel="stylesheet" type="text/css" href="../Content/Site.css">
+
+<title>人人网 - 注册</title>
+<link href="http://s.xnimg.cn/favicon-rr.ico" rel="shortcut icon" type="image/x-icon">
+        <link href="http://s.xnimg.cn/renren_logo_apple.png" rel="apple-touch-icon">
+        <link href="http://s.xnimg.cn/a69263/csspro/apps/reg2.css" rel="stylesheet" rev="stylesheet" media="all">
+</head>
+<body>
+    <ul class="autocomplete_panel" style="border: 1px solid rgb(204, 204, 204); background: none repeat scroll 0% 0% rgb(245, 245, 245); padding: 1px; margin: 0px; list-style: none outside none; position: absolute; display: none;"></ul>	
+<div id="header">
+<div id="nav">
+<div class="logo"></div>
+<div class="font">
+<span class="friend">10秒找到你所有朋友</span>
+<span class="right">已有人人帐号，@Html.ActionLink("登陆","index","Home") </span>
+</div>
+</div>
+</div>
+<div class="main_wrap clearfix" id="main">
+<div class="guide-reg clearfix">
+<div class="main_left">
+<div class="form_wrap clearfix">
+<div class="tab clearfix">
+
+<a href="#" id="tab_email" class="echoice"></a>
+</div>
+<div class="reg_form">
+
+
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>注册表单</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </li>
+            <li>@Html.LabelFor(model => model.name)
+                @Html.EditorFor(model => model.name)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.securityQuestion)
+                @Html.EditorFor(m => m.securityQuestion)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.securityAnswer)
+                @Html.EditorFor(m => m.securityAnswer)
+            </li>
+        </ol>
+        <input type="submit" value="注册" />
+    </fieldset>
+}
+</div>
+</div>
+</div>
+</body></html>

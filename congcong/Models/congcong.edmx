@@ -1,0 +1,911 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="congcongModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="congcongModelStoreContainer">
+          <EntitySet Name="cc_AD" EntityType="congcongModel.Store.cc_AD" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cc_admin" EntityType="congcongModel.Store.cc_admin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cc_comment" EntityType="congcongModel.Store.cc_comment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cc_news" EntityType="congcongModel.Store.cc_news" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cc_publicMessage" EntityType="congcongModel.Store.cc_publicMessage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cc_relationship" EntityType="congcongModel.Store.cc_relationship" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cc_secretMessage" EntityType="congcongModel.Store.cc_secretMessage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cc_sensitiveWord" EntityType="congcongModel.Store.cc_sensitiveWord" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cc_user" EntityType="congcongModel.Store.cc_user" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="cc_visiter" EntityType="congcongModel.Store.cc_visiter" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="congcongModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_cc_admin_cc_news" Association="congcongModel.Store.FK_cc_admin_cc_news">
+            <End Role="cc_news" EntitySet="cc_news" />
+            <End Role="cc_admin" EntitySet="cc_admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_admin_cc_user1" Association="congcongModel.Store.FK_cc_admin_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_admin" EntitySet="cc_admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_comment_cc_news" Association="congcongModel.Store.FK_cc_comment_cc_news">
+            <End Role="cc_news" EntitySet="cc_news" />
+            <End Role="cc_comment" EntitySet="cc_comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_comment_cc_user" Association="congcongModel.Store.FK_cc_comment_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_comment" EntitySet="cc_comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_news_cc_user" Association="congcongModel.Store.FK_cc_news_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_news" EntitySet="cc_news" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_news_cc_user1" Association="congcongModel.Store.FK_cc_news_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_news" EntitySet="cc_news" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_publicMessage_cc_user" Association="congcongModel.Store.FK_cc_publicMessage_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_publicMessage" EntitySet="cc_publicMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_publicMessage_cc_user1" Association="congcongModel.Store.FK_cc_publicMessage_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_publicMessage" EntitySet="cc_publicMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_relationship_cc_user" Association="congcongModel.Store.FK_cc_relationship_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_relationship" EntitySet="cc_relationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_relationship_cc_user1" Association="congcongModel.Store.FK_cc_relationship_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_relationship" EntitySet="cc_relationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_secretMessage_cc_user" Association="congcongModel.Store.FK_cc_secretMessage_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_secretMessage" EntitySet="cc_secretMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_secretMessage_cc_user1" Association="congcongModel.Store.FK_cc_secretMessage_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_secretMessage" EntitySet="cc_secretMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_visiter_cc_user" Association="congcongModel.Store.FK_cc_visiter_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_visiter" EntitySet="cc_visiter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_visiter_cc_user1" Association="congcongModel.Store.FK_cc_visiter_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_visiter" EntitySet="cc_visiter" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cc_AD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="contentText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="contentImage" Type="varbinary(max)" Nullable="false" />
+          <Property Name="contentURL" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cc_admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="isHandled" Type="bit" Nullable="false" />
+          <Property Name="banDuration" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="newsId" Type="int" />
+          <Property Name="userId" Type="int" />
+        </EntityType>
+        <EntityType Name="cc_comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="comment" Type="text" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="newsId" Type="int" />
+          <Property Name="userId" Type="int" />
+        </EntityType>
+        <EntityType Name="cc_news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="type" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="position" Type="nchar" MaxLength="10" />
+          <Property Name="client" Type="nchar" MaxLength="10" />
+          <Property Name="isAnonymous" Type="bit" Nullable="false" />
+          <Property Name="contentText" Type="nvarchar(max)" />
+          <Property Name="contentImage" Type="varbinary(max)" />
+          <Property Name="likedNum" Type="int" Nullable="false" />
+          <Property Name="commentNum" Type="int" Nullable="false" />
+          <Property Name="state" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="shareFrom" Type="int" />
+        </EntityType>
+        <EntityType Name="cc_publicMessage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="contentText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="recieveId" Type="int" Nullable="false" />
+          <Property Name="senderId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cc_relationship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="type" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId_1" Type="int" />
+          <Property Name="userId_2" Type="int" />
+        </EntityType>
+        <EntityType Name="cc_secretMessage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="contentText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="senderId" Type="int" Nullable="false" />
+          <Property Name="recieveId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cc_sensitiveWord">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="contentText" Type="varchar(max)" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cc_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="image" Type="varbinary(max)" />
+          <Property Name="type" Type="nchar" MaxLength="10" />
+          <Property Name="frendsNum" Type="int" />
+          <Property Name="secretMessageNum" Type="int" />
+          <Property Name="publickMessageNum" Type="int" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="securityQuestion" Type="nvarchar" MaxLength="50" />
+          <Property Name="securityAnswer" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="cc_visiter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="visitorId" Type="int" Nullable="false" />
+          <Property Name="hostId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_cc_admin_cc_news">
+          <End Role="cc_news" Type="congcongModel.Store.cc_news" Multiplicity="0..1" />
+          <End Role="cc_admin" Type="congcongModel.Store.cc_admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_news">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_admin">
+              <PropertyRef Name="newsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_admin_cc_user1">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="0..1" />
+          <End Role="cc_admin" Type="congcongModel.Store.cc_admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_admin">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_comment_cc_news">
+          <End Role="cc_news" Type="congcongModel.Store.cc_news" Multiplicity="0..1" />
+          <End Role="cc_comment" Type="congcongModel.Store.cc_comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_news">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_comment">
+              <PropertyRef Name="newsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_comment_cc_user">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="0..1" />
+          <End Role="cc_comment" Type="congcongModel.Store.cc_comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_comment">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_news_cc_user">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="0..1" />
+          <End Role="cc_news" Type="congcongModel.Store.cc_news" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_news">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_news_cc_user1">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="0..1" />
+          <End Role="cc_news" Type="congcongModel.Store.cc_news" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_news">
+              <PropertyRef Name="shareFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_publicMessage_cc_user">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="1" />
+          <End Role="cc_publicMessage" Type="congcongModel.Store.cc_publicMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_publicMessage">
+              <PropertyRef Name="senderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_publicMessage_cc_user1">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="1" />
+          <End Role="cc_publicMessage" Type="congcongModel.Store.cc_publicMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_publicMessage">
+              <PropertyRef Name="recieveId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_relationship_cc_user">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="0..1" />
+          <End Role="cc_relationship" Type="congcongModel.Store.cc_relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_relationship">
+              <PropertyRef Name="userId_1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_relationship_cc_user1">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="0..1" />
+          <End Role="cc_relationship" Type="congcongModel.Store.cc_relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_relationship">
+              <PropertyRef Name="userId_2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_secretMessage_cc_user">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="1" />
+          <End Role="cc_secretMessage" Type="congcongModel.Store.cc_secretMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_secretMessage">
+              <PropertyRef Name="senderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_secretMessage_cc_user1">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="1" />
+          <End Role="cc_secretMessage" Type="congcongModel.Store.cc_secretMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_secretMessage">
+              <PropertyRef Name="recieveId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_visiter_cc_user">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="1" />
+          <End Role="cc_visiter" Type="congcongModel.Store.cc_visiter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_visiter">
+              <PropertyRef Name="hostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_visiter_cc_user1">
+          <End Role="cc_user" Type="congcongModel.Store.cc_user" Multiplicity="1" />
+          <End Role="cc_visiter" Type="congcongModel.Store.cc_visiter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_visiter">
+              <PropertyRef Name="visitorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="congcongModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="congcongEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="cc_AD" EntityType="congcongModel.cc_AD" />
+          <EntitySet Name="cc_admin" EntityType="congcongModel.cc_admin" />
+          <EntitySet Name="cc_comment" EntityType="congcongModel.cc_comment" />
+          <EntitySet Name="cc_news" EntityType="congcongModel.cc_news" />
+          <EntitySet Name="cc_publicMessage" EntityType="congcongModel.cc_publicMessage" />
+          <EntitySet Name="cc_relationship" EntityType="congcongModel.cc_relationship" />
+          <EntitySet Name="cc_secretMessage" EntityType="congcongModel.cc_secretMessage" />
+          <EntitySet Name="cc_sensitiveWord" EntityType="congcongModel.cc_sensitiveWord" />
+          <EntitySet Name="cc_user" EntityType="congcongModel.cc_user" />
+          <EntitySet Name="cc_visiter" EntityType="congcongModel.cc_visiter" />
+          <EntitySet Name="sysdiagrams" EntityType="congcongModel.sysdiagrams" />
+          <AssociationSet Name="FK_cc_admin_cc_news" Association="congcongModel.FK_cc_admin_cc_news">
+            <End Role="cc_news" EntitySet="cc_news" />
+            <End Role="cc_admin" EntitySet="cc_admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_admin_cc_user1" Association="congcongModel.FK_cc_admin_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_admin" EntitySet="cc_admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_comment_cc_news" Association="congcongModel.FK_cc_comment_cc_news">
+            <End Role="cc_news" EntitySet="cc_news" />
+            <End Role="cc_comment" EntitySet="cc_comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_comment_cc_user" Association="congcongModel.FK_cc_comment_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_comment" EntitySet="cc_comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_news_cc_user" Association="congcongModel.FK_cc_news_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_news" EntitySet="cc_news" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_news_cc_user1" Association="congcongModel.FK_cc_news_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_news" EntitySet="cc_news" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_publicMessage_cc_user" Association="congcongModel.FK_cc_publicMessage_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_publicMessage" EntitySet="cc_publicMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_publicMessage_cc_user1" Association="congcongModel.FK_cc_publicMessage_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_publicMessage" EntitySet="cc_publicMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_relationship_cc_user" Association="congcongModel.FK_cc_relationship_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_relationship" EntitySet="cc_relationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_relationship_cc_user1" Association="congcongModel.FK_cc_relationship_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_relationship" EntitySet="cc_relationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_secretMessage_cc_user" Association="congcongModel.FK_cc_secretMessage_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_secretMessage" EntitySet="cc_secretMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_secretMessage_cc_user1" Association="congcongModel.FK_cc_secretMessage_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_secretMessage" EntitySet="cc_secretMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_visiter_cc_user" Association="congcongModel.FK_cc_visiter_cc_user">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_visiter" EntitySet="cc_visiter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_cc_visiter_cc_user1" Association="congcongModel.FK_cc_visiter_cc_user1">
+            <End Role="cc_user" EntitySet="cc_user" />
+            <End Role="cc_visiter" EntitySet="cc_visiter" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="cc_AD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="contentText" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="contentImage" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="contentURL" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cc_admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="isHandled" Type="Boolean" Nullable="false" />
+          <Property Name="banDuration" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="newsId" Type="Int32" />
+          <Property Name="userId" Type="Int32" />
+          <NavigationProperty Name="cc_news" Relationship="congcongModel.FK_cc_admin_cc_news" FromRole="cc_admin" ToRole="cc_news" />
+          <NavigationProperty Name="cc_user" Relationship="congcongModel.FK_cc_admin_cc_user1" FromRole="cc_admin" ToRole="cc_user" />
+        </EntityType>
+        <EntityType Name="cc_comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="comment" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="newsId" Type="Int32" />
+          <Property Name="userId" Type="Int32" />
+          <NavigationProperty Name="cc_news" Relationship="congcongModel.FK_cc_comment_cc_news" FromRole="cc_comment" ToRole="cc_news" />
+          <NavigationProperty Name="cc_user" Relationship="congcongModel.FK_cc_comment_cc_user" FromRole="cc_comment" ToRole="cc_user" />
+        </EntityType>
+        <EntityType Name="cc_news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="type" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="position" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="client" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="isAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="contentText" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="contentImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="likedNum" Type="Int32" Nullable="false" />
+          <Property Name="commentNum" Type="Int32" Nullable="false" />
+          <Property Name="state" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="shareFrom" Type="Int32" />
+          <NavigationProperty Name="cc_admin" Relationship="congcongModel.FK_cc_admin_cc_news" FromRole="cc_news" ToRole="cc_admin" />
+          <NavigationProperty Name="cc_comment" Relationship="congcongModel.FK_cc_comment_cc_news" FromRole="cc_news" ToRole="cc_comment" />
+          <NavigationProperty Name="cc_user" Relationship="congcongModel.FK_cc_news_cc_user" FromRole="cc_news" ToRole="cc_user" />
+          <NavigationProperty Name="cc_user1" Relationship="congcongModel.FK_cc_news_cc_user1" FromRole="cc_news" ToRole="cc_user" />
+        </EntityType>
+        <EntityType Name="cc_publicMessage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="contentText" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="recieveId" Type="Int32" Nullable="false" />
+          <Property Name="senderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cc_user" Relationship="congcongModel.FK_cc_publicMessage_cc_user" FromRole="cc_publicMessage" ToRole="cc_user" />
+          <NavigationProperty Name="cc_user1" Relationship="congcongModel.FK_cc_publicMessage_cc_user1" FromRole="cc_publicMessage" ToRole="cc_user" />
+        </EntityType>
+        <EntityType Name="cc_relationship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="type" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId_1" Type="Int32" />
+          <Property Name="userId_2" Type="Int32" />
+          <NavigationProperty Name="cc_user" Relationship="congcongModel.FK_cc_relationship_cc_user" FromRole="cc_relationship" ToRole="cc_user" />
+          <NavigationProperty Name="cc_user1" Relationship="congcongModel.FK_cc_relationship_cc_user1" FromRole="cc_relationship" ToRole="cc_user" />
+        </EntityType>
+        <EntityType Name="cc_secretMessage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="contentText" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="senderId" Type="Int32" Nullable="false" />
+          <Property Name="recieveId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cc_user" Relationship="congcongModel.FK_cc_secretMessage_cc_user" FromRole="cc_secretMessage" ToRole="cc_user" />
+          <NavigationProperty Name="cc_user1" Relationship="congcongModel.FK_cc_secretMessage_cc_user1" FromRole="cc_secretMessage" ToRole="cc_user" />
+        </EntityType>
+        <EntityType Name="cc_sensitiveWord">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="contentText" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cc_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="type" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="frendsNum" Type="Int32" />
+          <Property Name="secretMessageNum" Type="Int32" />
+          <Property Name="publickMessageNum" Type="Int32" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="securityQuestion" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="securityAnswer" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="cc_admin" Relationship="congcongModel.FK_cc_admin_cc_user1" FromRole="cc_user" ToRole="cc_admin" />
+          <NavigationProperty Name="cc_comment" Relationship="congcongModel.FK_cc_comment_cc_user" FromRole="cc_user" ToRole="cc_comment" />
+          <NavigationProperty Name="cc_news" Relationship="congcongModel.FK_cc_news_cc_user" FromRole="cc_user" ToRole="cc_news" />
+          <NavigationProperty Name="cc_news1" Relationship="congcongModel.FK_cc_news_cc_user1" FromRole="cc_user" ToRole="cc_news" />
+          <NavigationProperty Name="cc_publicMessage" Relationship="congcongModel.FK_cc_publicMessage_cc_user" FromRole="cc_user" ToRole="cc_publicMessage" />
+          <NavigationProperty Name="cc_publicMessage1" Relationship="congcongModel.FK_cc_publicMessage_cc_user1" FromRole="cc_user" ToRole="cc_publicMessage" />
+          <NavigationProperty Name="cc_relationship" Relationship="congcongModel.FK_cc_relationship_cc_user" FromRole="cc_user" ToRole="cc_relationship" />
+          <NavigationProperty Name="cc_relationship1" Relationship="congcongModel.FK_cc_relationship_cc_user1" FromRole="cc_user" ToRole="cc_relationship" />
+          <NavigationProperty Name="cc_secretMessage" Relationship="congcongModel.FK_cc_secretMessage_cc_user" FromRole="cc_user" ToRole="cc_secretMessage" />
+          <NavigationProperty Name="cc_secretMessage1" Relationship="congcongModel.FK_cc_secretMessage_cc_user1" FromRole="cc_user" ToRole="cc_secretMessage" />
+          <NavigationProperty Name="cc_visiter" Relationship="congcongModel.FK_cc_visiter_cc_user" FromRole="cc_user" ToRole="cc_visiter" />
+          <NavigationProperty Name="cc_visiter1" Relationship="congcongModel.FK_cc_visiter_cc_user1" FromRole="cc_user" ToRole="cc_visiter" />
+        </EntityType>
+        <EntityType Name="cc_visiter">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="visitorId" Type="Int32" Nullable="false" />
+          <Property Name="hostId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cc_user" Relationship="congcongModel.FK_cc_visiter_cc_user" FromRole="cc_visiter" ToRole="cc_user" />
+          <NavigationProperty Name="cc_user1" Relationship="congcongModel.FK_cc_visiter_cc_user1" FromRole="cc_visiter" ToRole="cc_user" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_cc_admin_cc_news">
+          <End Role="cc_news" Type="congcongModel.cc_news" Multiplicity="0..1" />
+          <End Role="cc_admin" Type="congcongModel.cc_admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_news">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_admin">
+              <PropertyRef Name="newsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_admin_cc_user1">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="0..1" />
+          <End Role="cc_admin" Type="congcongModel.cc_admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_admin">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_comment_cc_news">
+          <End Role="cc_news" Type="congcongModel.cc_news" Multiplicity="0..1" />
+          <End Role="cc_comment" Type="congcongModel.cc_comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_news">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_comment">
+              <PropertyRef Name="newsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_comment_cc_user">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="0..1" />
+          <End Role="cc_comment" Type="congcongModel.cc_comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_comment">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_news_cc_user">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="0..1" />
+          <End Role="cc_news" Type="congcongModel.cc_news" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_news">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_news_cc_user1">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="0..1" />
+          <End Role="cc_news" Type="congcongModel.cc_news" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_news">
+              <PropertyRef Name="shareFrom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_publicMessage_cc_user">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="1" />
+          <End Role="cc_publicMessage" Type="congcongModel.cc_publicMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_publicMessage">
+              <PropertyRef Name="senderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_publicMessage_cc_user1">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="1" />
+          <End Role="cc_publicMessage" Type="congcongModel.cc_publicMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_publicMessage">
+              <PropertyRef Name="recieveId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_relationship_cc_user">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="0..1" />
+          <End Role="cc_relationship" Type="congcongModel.cc_relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_relationship">
+              <PropertyRef Name="userId_1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_relationship_cc_user1">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="0..1" />
+          <End Role="cc_relationship" Type="congcongModel.cc_relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_relationship">
+              <PropertyRef Name="userId_2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_secretMessage_cc_user">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="1" />
+          <End Role="cc_secretMessage" Type="congcongModel.cc_secretMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_secretMessage">
+              <PropertyRef Name="senderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_secretMessage_cc_user1">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="1" />
+          <End Role="cc_secretMessage" Type="congcongModel.cc_secretMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_secretMessage">
+              <PropertyRef Name="recieveId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_visiter_cc_user">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="1" />
+          <End Role="cc_visiter" Type="congcongModel.cc_visiter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_visiter">
+              <PropertyRef Name="hostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_cc_visiter_cc_user1">
+          <End Role="cc_user" Type="congcongModel.cc_user" Multiplicity="1" />
+          <End Role="cc_visiter" Type="congcongModel.cc_visiter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cc_visiter">
+              <PropertyRef Name="visitorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="congcongModelStoreContainer" CdmEntityContainer="congcongEntities">
+          <EntitySetMapping Name="cc_AD">
+            <EntityTypeMapping TypeName="congcongModel.cc_AD">
+              <MappingFragment StoreEntitySet="cc_AD">
+                <ScalarProperty Name="contentText" ColumnName="contentText" />
+                <ScalarProperty Name="contentImage" ColumnName="contentImage" />
+                <ScalarProperty Name="contentURL" ColumnName="contentURL" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cc_admin">
+            <EntityTypeMapping TypeName="congcongModel.cc_admin">
+              <MappingFragment StoreEntitySet="cc_admin">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="isHandled" ColumnName="isHandled" />
+                <ScalarProperty Name="banDuration" ColumnName="banDuration" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="newsId" ColumnName="newsId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cc_comment">
+            <EntityTypeMapping TypeName="congcongModel.cc_comment">
+              <MappingFragment StoreEntitySet="cc_comment">
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="newsId" ColumnName="newsId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cc_news">
+            <EntityTypeMapping TypeName="congcongModel.cc_news">
+              <MappingFragment StoreEntitySet="cc_news">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="client" ColumnName="client" />
+                <ScalarProperty Name="isAnonymous" ColumnName="isAnonymous" />
+                <ScalarProperty Name="contentText" ColumnName="contentText" />
+                <ScalarProperty Name="contentImage" ColumnName="contentImage" />
+                <ScalarProperty Name="likedNum" ColumnName="likedNum" />
+                <ScalarProperty Name="commentNum" ColumnName="commentNum" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="shareFrom" ColumnName="shareFrom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cc_publicMessage">
+            <EntityTypeMapping TypeName="congcongModel.cc_publicMessage">
+              <MappingFragment StoreEntitySet="cc_publicMessage">
+                <ScalarProperty Name="contentText" ColumnName="contentText" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="recieveId" ColumnName="recieveId" />
+                <ScalarProperty Name="senderId" ColumnName="senderId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cc_relationship">
+            <EntityTypeMapping TypeName="congcongModel.cc_relationship">
+              <MappingFragment StoreEntitySet="cc_relationship">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId_1" ColumnName="userId_1" />
+                <ScalarProperty Name="userId_2" ColumnName="userId_2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cc_secretMessage">
+            <EntityTypeMapping TypeName="congcongModel.cc_secretMessage">
+              <MappingFragment StoreEntitySet="cc_secretMessage">
+                <ScalarProperty Name="contentText" ColumnName="contentText" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="senderId" ColumnName="senderId" />
+                <ScalarProperty Name="recieveId" ColumnName="recieveId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cc_sensitiveWord">
+            <EntityTypeMapping TypeName="congcongModel.cc_sensitiveWord">
+              <MappingFragment StoreEntitySet="cc_sensitiveWord">
+                <ScalarProperty Name="contentText" ColumnName="contentText" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cc_user">
+            <EntityTypeMapping TypeName="congcongModel.cc_user">
+              <MappingFragment StoreEntitySet="cc_user">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="frendsNum" ColumnName="frendsNum" />
+                <ScalarProperty Name="secretMessageNum" ColumnName="secretMessageNum" />
+                <ScalarProperty Name="publickMessageNum" ColumnName="publickMessageNum" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="securityQuestion" ColumnName="securityQuestion" />
+                <ScalarProperty Name="securityAnswer" ColumnName="securityAnswer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cc_visiter">
+            <EntityTypeMapping TypeName="congcongModel.cc_visiter">
+              <MappingFragment StoreEntitySet="cc_visiter">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="visitorId" ColumnName="visitorId" />
+                <ScalarProperty Name="hostId" ColumnName="hostId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="congcongModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

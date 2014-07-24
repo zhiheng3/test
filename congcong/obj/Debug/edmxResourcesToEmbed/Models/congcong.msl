@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="congcongModelStoreContainer" CdmEntityContainer="congcongEntities">
+    <EntitySetMapping Name="cc_AD">
+      <EntityTypeMapping TypeName="congcongModel.cc_AD">
+        <MappingFragment StoreEntitySet="cc_AD">
+          <ScalarProperty Name="contentText" ColumnName="contentText" />
+          <ScalarProperty Name="contentImage" ColumnName="contentImage" />
+          <ScalarProperty Name="contentURL" ColumnName="contentURL" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cc_admin">
+      <EntityTypeMapping TypeName="congcongModel.cc_admin">
+        <MappingFragment StoreEntitySet="cc_admin">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isHandled" ColumnName="isHandled" />
+          <ScalarProperty Name="banDuration" ColumnName="banDuration" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="newsId" ColumnName="newsId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cc_comment">
+      <EntityTypeMapping TypeName="congcongModel.cc_comment">
+        <MappingFragment StoreEntitySet="cc_comment">
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="newsId" ColumnName="newsId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cc_news">
+      <EntityTypeMapping TypeName="congcongModel.cc_news">
+        <MappingFragment StoreEntitySet="cc_news">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="isAnonymous" ColumnName="isAnonymous" />
+          <ScalarProperty Name="contentText" ColumnName="contentText" />
+          <ScalarProperty Name="contentImage" ColumnName="contentImage" />
+          <ScalarProperty Name="likedNum" ColumnName="likedNum" />
+          <ScalarProperty Name="commentNum" ColumnName="commentNum" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="shareFrom" ColumnName="shareFrom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cc_publicMessage">
+      <EntityTypeMapping TypeName="congcongModel.cc_publicMessage">
+        <MappingFragment StoreEntitySet="cc_publicMessage">
+          <ScalarProperty Name="contentText" ColumnName="contentText" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="recieveId" ColumnName="recieveId" />
+          <ScalarProperty Name="senderId" ColumnName="senderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cc_relationship">
+      <EntityTypeMapping TypeName="congcongModel.cc_relationship">
+        <MappingFragment StoreEntitySet="cc_relationship">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId_1" ColumnName="userId_1" />
+          <ScalarProperty Name="userId_2" ColumnName="userId_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cc_secretMessage">
+      <EntityTypeMapping TypeName="congcongModel.cc_secretMessage">
+        <MappingFragment StoreEntitySet="cc_secretMessage">
+          <ScalarProperty Name="contentText" ColumnName="contentText" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="senderId" ColumnName="senderId" />
+          <ScalarProperty Name="recieveId" ColumnName="recieveId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cc_sensitiveWord">
+      <EntityTypeMapping TypeName="congcongModel.cc_sensitiveWord">
+        <MappingFragment StoreEntitySet="cc_sensitiveWord">
+          <ScalarProperty Name="contentText" ColumnName="contentText" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cc_user">
+      <EntityTypeMapping TypeName="congcongModel.cc_user">
+        <MappingFragment StoreEntitySet="cc_user">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="frendsNum" ColumnName="frendsNum" />
+          <ScalarProperty Name="secretMessageNum" ColumnName="secretMessageNum" />
+          <ScalarProperty Name="publickMessageNum" ColumnName="publickMessageNum" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="securityQuestion" ColumnName="securityQuestion" />
+          <ScalarProperty Name="securityAnswer" ColumnName="securityAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cc_visiter">
+      <EntityTypeMapping TypeName="congcongModel.cc_visiter">
+        <MappingFragment StoreEntitySet="cc_visiter">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="visitorId" ColumnName="visitorId" />
+          <ScalarProperty Name="hostId" ColumnName="hostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="congcongModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

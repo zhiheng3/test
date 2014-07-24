@@ -1,0 +1,69 @@
+﻿@model IEnumerable<congcong.Models.ExtraUserInformation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GroupId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecurityQuestion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecurityAnswer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastLoginTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GroupId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecurityQuestion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecurityAnswer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastLoginTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

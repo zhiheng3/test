@@ -1,0 +1,100 @@
+﻿@model congcong.Models.LoginModel
+
+<!DOCTYPE html><html>
+<head>
+<link rel="stylesheet" type="text/css" href="../Content/Site.css" />
+<link rel="shortcut icon" type="image/x-icon" href="http://a.xnimg.cn/favicon-rr.ico?ver=3" />
+<link rel="apple-touch-icon" href="http://a.xnimg.cn/wap/apple_icon_.png" />
+<link href="http://s.xnimg.cn/a64650/n/apps/login/v6/login-all-min.css" rel="stylesheet" type="text/css" media="all" />		
+<title>人人网，中国领先的实名制SNS社交网络。加入人人网，找到老同学，结识新朋友。</title></head>
+<body id="syshome" class="login">
+<div id="moredownWeb" class="dropdown" style="position:absolute; top:-9999px; left:-9999px;">
+<div class="menu-dropdown-border">
+<div class="weblist">
+</div>
+</div>
+</div>
+<div id="header">
+<div id="navBar" class="site-nav rr">
+<div class="navigation-wrapper">
+<div class="navigation navigation-new clearfix">
+<div id="logo2">
+<h1>
+<a href="http://www.renren.com" title="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏">
+<img alt="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏" title="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏" height="72" width="222" src="http://a.xnimg.cn/n/apps/login/v6/res/logo_v6.png" />
+</a>
+</h1>
+</div>
+<div class="nav-body clearfix">
+<h2 class="nav-title">中国领先的实名制SNS社交网络</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="opi" class="page-wrapper clearfix">
+<div class="full-page-holder">
+<div class="full-page">
+<div class="login-wrap">        
+<div class="login-box">
+<div class="login-panel">
+    <fieldset>
+        
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </li>
+            <li>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+            </li>
+        </ol>
+        <div class ="m_LogIn">
+        <input type="submit" value="登 录" />
+        </div>
+    </fieldset>
+
+
+<div class="regnow">
+<div style="background-color:#3B6E22;height:36px;"> 
+    <p  id ="m_register" style="font-size:20px;text-align:center;margin:auto;">
+        @Html.ActionLink("注 册","Register","Account")
+    </p>
+    </div>
+</div>
+
+</div>
+</div>
+<div class="ad-panel" id="ad100000000068" stats="loginPage_bigAD_link">
+    <div class="side-item-body clearfix" style="border-top-width: 1px; border-top-style: solid; border-top-color: rgb(206, 225, 238);">
+        <div class="figure">
+            <a id="ad1000120543000100001_1406097776650_adbox100000000068previewClickUrl" class="link" href="http://track.yx.renren.com/redirect/12997" target="_blank"> </a>
+            <div id="ad1000120543000100001_1406097776650_adbox100000000068pic">
+                <a target="_blank" href="http://ebp.renren.com/ebpn/click.html?aid=1000120543000100001&amp;mc=0%5EC0%5EC1000120543000100001%5EC0%5EC0%5EC1%5EC100%5EC1406097776%5EC1000000_2%7C0%7C1994-01-01%7C20%7C2%7C0086110000000000%7C0_0086110000000000%7C0%7C0%7C0%7C0086110108000000%5EC100000000068%5EC0%5EC%5EC%5EC-&amp;refresh_source=0&amp;refresh_idx=0&amp;engine_type=&amp;ref=http%3A%2F%2Fwww.renren.com%2Fad_100000000068&amp;url=http%3A%2F%2Ftrack.yx.renren.com%2Fredirect%2F12997%3Fabflag%3Dpic%C3%97tamp%3D1406097776621">
+                    <img width="960" height="460" src="http://jebe.xnimg.cn/20140714/14/4d06a5e1-1c4d-40d4-ada1-94db125e69b5.jpg"></a>
+            </div>   
+        </div> 
+    </div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>

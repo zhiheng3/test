@@ -1,0 +1,64 @@
+﻿@model congcong.Models.ExtraUserInformation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ExtraUserInformation</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GroupId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GroupId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SecurityQuestion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecurityQuestion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SecurityAnswer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SecurityAnswer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RegTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RegTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastLoginTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastLoginTime)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
